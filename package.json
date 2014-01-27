@@ -1,6 +1,6 @@
 {
   "name": "generator-sapui5",
-  "version": "0.0.0",
+  "version": "0.0.1ß",
   "description": "A generator for SAPUI5",
   "keywords": [
     "yeoman-generator"
@@ -33,9 +33,7 @@
     "node": ">=0.8.0",
     "npm": ">=1.2.10"
   },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ]
+  "licenses": [{
+    "type": "MIT"
+  }]
 }
