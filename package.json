@@ -1,6 +1,6 @@
 {
   "name": "generator-sapui5",
-  "version": "0.0.1ß",
+  "version": "0.0.1",
   "description": "A generator for SAPUI5",
   "keywords": [
     "yeoman-generator"
