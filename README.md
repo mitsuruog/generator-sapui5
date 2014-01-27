@@ -1,6 +1,6 @@
 # generator-sapui5 [![Build Status](https://secure.travis-ci.org/mitsuruog/generator-sapui5.png?branch=master)](https://travis-ci.org/mitsuruog/generator-sapui5)
 
-A generator for [Yeoman](http://yeoman.io).
+A generator for [OpenUI5(the Open-Source-licensed version of SAPUI5)](http://sap.github.io/openui5/).
 
 
 ## Getting Started
@@ -35,11 +35,30 @@ Finally, initiate the generator:
 $ yo sapui5
 ```
 
+Preview:
+
+```
+$ grunt server
+```
+
 ### Generators
 
 [TODO]Available generators:
 
 * sapui5:view
+
+### Options
+
+* `--skip-install`
+
+  Skips the automatic execution of `bower` and `npm` after
+  scaffolding has finished.
+
+* [TODO]`--app-style=[mobile|desktop]`
+
+  Defaults to `mobile`. Can be switched for `desktop`.
+
+
 
 ### Getting To Know Yeoman
 
