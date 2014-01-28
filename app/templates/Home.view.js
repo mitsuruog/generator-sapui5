@@ -7,7 +7,7 @@ sap.ui.jsview("view.Home", {
 	createContent: function(oController) {
 
 		this.page = new sap.m.Page({
-			title: "generator-sapui5-playground",
+			title: "<%= _.slugify(appname) %>",
 			content: [],
 			footer: []
 		});
