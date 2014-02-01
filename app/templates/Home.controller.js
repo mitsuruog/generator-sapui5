@@ -34,7 +34,7 @@ sap.ui.controller("view.Home", {
 	itemPress: function(evt){
 
 		var link = evt.getSource().getBindingContext('links').getObject().link;
-		window.open(link);
+		sap.m.URLHelper.redirect(link, true);
 
 	}
 
