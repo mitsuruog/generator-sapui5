@@ -4,8 +4,6 @@ A generator for SAPUI5 and [OpenUI5(the Open-Source-licensed version of SAPUI5)]
 
 ![Commandline](https://raw2.github.com/mitsuruog/generator-sapui5/master/screenshots/command.png)
 
-![ScreenShot](https://raw2.github.com/mitsuruog/generator-sapui5/master/screenshots/HelloSAPUI5.png)
-
 
 ## Getting Started
 
@@ -38,6 +36,11 @@ or
 ```
 $ grunt
 ```
+
+Result:
+
+![ScreenShot](https://raw2.github.com/mitsuruog/generator-sapui5/master/screenshots/HelloSAPUI5.png)
+
 
 ### Generators
 
