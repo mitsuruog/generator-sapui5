@@ -43,9 +43,9 @@ module.exports = function(grunt) {
           livereload: LIVERELOAD_PORT
         },
         files: [
-          '<%= yeoman.app %>/{,*/}*.html',
-          '<%= yeoman.app %>/css/{,*/}*.css',
-          '<%= yeoman.app %>/{,*/}*.js'
+          '<%%= yeoman.app %>/**/*.html',
+          '<%%= yeoman.app %>/css/**/*.css',
+          '<%%= yeoman.app %>/**/*.js'
         ]
       }
     },

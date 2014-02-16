@@ -23,7 +23,6 @@ describe('sapui5 generator', function () {
         var expected = [
             // add files you expect to exist here.
             '.jshintrc',
-            '.editorconfig',
             'app/index.html',
             'app/Application.js',
             'app/view/App.view.js',

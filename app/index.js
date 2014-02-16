@@ -52,8 +52,11 @@ Sapui5Generator.prototype.askFor = function askFor() {
     this.useCdn = hasFeature('useCdn');
     this.developMode = hasFeature('developMode');
 
-    var resourceUrl = 'resources/sap-ui-core.js';
-    this.resourceUrl = this.useCdn ? 'https://sapui5.hana.ondemand.com/' + resourceUrl : resourceUrl;
+    console.log('this.developMode->' + this.developMode);
+
+    var resourceUrl = 'https://sapui5.hana.ondemand.com/resources/sap-ui-core.js';
+    resourceUrl = this.useCdn ? resourceUrl : resourceUrl.replace(/^https:\/\/sapui5.hana.ondemand.com\//, '');
+    this.resourceUrl = this.developMode ? resourceUrl.replace(/\.js$/, '-dbg.js') : resourceUrl;
 
     cb();
   }.bind(this));
