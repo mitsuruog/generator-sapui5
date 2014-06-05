@@ -42,11 +42,15 @@ Result:
 ![ScreenShot](https://raw2.github.com/mitsuruog/generator-sapui5/master/screenshots/HelloSAPUI5.png)
 
 
-### Generators
+### Sub Generators
 
-[TODO]Available generators:
+[TODO]Available sub generators:
 
 * sapui5:view
+
+* sapui5:fragments
+
+* sapui5:module
 
 ### Options
 
@@ -55,9 +59,9 @@ Result:
   Skips the automatic execution of `bower` and `npm` after
   scaffolding has finished.
 
-* [TODO]`--app-style=[mobile|desktop]`
+* [TODO]`--coffee`
 
-  Defaults to `mobile`. Can be switched for `desktop`.
+  Add support for [CoffeeScript](http://coffeescript.org/).
 
 
 
