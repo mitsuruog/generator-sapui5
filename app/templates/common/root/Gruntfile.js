@@ -1,4 +1,5 @@
-// Generated on <%= (new Date).toISOString().split('T')[0] %> using <%= pkg.name %> <%= pkg.version %>
+// Generated on <%= (new Date).toISOString().split('T')[0] %> using
+// <%= pkg.name %> <%= pkg.version %>
 'use strict';
 
 var LIVERELOAD_PORT = 35729;
@@ -26,6 +27,7 @@ module.exports = function(grunt) {
 
   // configurable paths
   var yeomanConfig = {
+    coffee: 'coffee',
     app: 'app'
   };
 
@@ -37,7 +39,14 @@ module.exports = function(grunt) {
       options: {
         nospawn: true,
         livereload: true
-      },
+      },<% if (coffee) { %>
+      coffee: {
+        files: ['<%%= yeoman.coffee %>/**/*.coffee'],
+        tasks: ['coffee:dist']
+      },<% } else { %>
+      js: {
+
+      },<% } %>
       livereload: {
         options: {
           livereload: LIVERELOAD_PORT
@@ -48,7 +57,22 @@ module.exports = function(grunt) {
           '<%%= yeoman.app %>/**/*.js'
         ]
       }
-    },
+    },<% if (coffee) { %>
+
+    coffee: {
+      dist: {
+        files: [{
+          expand: true,
+          flatten: false,
+          cwd: '<%%= yeoman.coffee %>',
+          src: ['**/*.coffee'],
+          dest: '<%%= yeoman.app %>',
+          ext: function(ext) {
+            return ext.replace(/coffee$/, 'js');
+          }
+        }]
+      }
+    },<% } %>
 
     connect: {
       options: {

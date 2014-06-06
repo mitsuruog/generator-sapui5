@@ -1,6 +1,6 @@
-jQuery.sap.declare "com.mitsuruog.openui5.odata.Component"
+jQuery.sap.declare "<%= namespace %>.Component"
 
-sap.ui.core.UIComponent.extend "com.mitsuruog.openui5.odata.Component",
+sap.ui.core.UIComponent.extend "<%= namespace %>.Component",
   metadata: 
     routing:
       config:
@@ -33,15 +33,15 @@ sap.ui.core.UIComponent.extend "com.mitsuruog.openui5.odata.Component",
 
   init: ->
     jQuery.sap.require "sap.m.routing.RouteMatchedHandler"
-    jQuery.sap.require "com.mitsuruog.openui5.odata.Router"
+    jQuery.sap.require "<%= namespace %>.Router"
 
     # call overriden init.
     sap.ui.core.UIComponent.prototype.init.apply @, arguments
 
     # set custom behavior to the router.
     router = @getRouter()
-    router.navBack = com.mitsuruog.openui5.odata.Router.navBack;
-    router.navToWithoutHash = com.mitsuruog.openui5.odata.Router.navToWithoutHash;
+    router.navBack = <%= namespace %>.Router.navBack;
+    router.navToWithoutHash = <%= namespace %>.Router.navToWithoutHash;
 
     # monkey patch
     unless sap.ui.Device.system.phone

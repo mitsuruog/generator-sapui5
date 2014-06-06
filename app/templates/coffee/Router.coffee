@@ -1,6 +1,6 @@
-jQuery.sap.declare "com.mitsuruog.openui5.odata.Router"
+jQuery.sap.declare "<%= namespace %>.Router"
 
-com.mitsuruog.openui5.odata.Router = 
+<%= namespace %>.Router = 
 
   ###
    * to extend the router with a nav to method that

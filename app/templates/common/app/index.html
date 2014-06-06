@@ -5,27 +5,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta charset="UTF-8">
 
-  <title>generator-sapui5</title>
+  <title><%= _.slugify(appname) %></title>
 
   <script id="sap-ui-bootstrap"
-    src="http://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+    src="<%= resourcePath %>"
     data-sap-ui-libs="sap.m"
     data-sap-ui-theme="sap_bluecrystal"
+    data-sap-ui-xx-bindingSyntax="complex"
     data-sap-ui-resourceroots='{
-        "com.mitsuruog.openui5.odata": "./",
+        "<%= namespace %>": "./",
         "view": "./view",
         "util": "./util"
     }'>
   </script>
   <script>
-  sap.ui.getCore().attachInit(function() {
-      new sap.m.Shell({
-          app: new sap.ui.core.ComponentContainer({
-              height : "100%",
-              name : "com.mitsuruog.openui5.odata"
-          })
-      }).placeAt("content");
-  });
+  new sap.m.Shell({
+    app: new sap.ui.core.ComponentContainer({
+      name : "<%= namespace %>"
+    })
+  }).placeAt("content");
   </script>
 
 </head>
