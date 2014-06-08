@@ -157,8 +157,8 @@ Sapui5Generator.prototype.askFor = function askFor() {
     type: "list",
     message: "Where do you want to use the sapui5 resource?",
     choices: [{
-      name: "http://openui5.hana.ondemand.com/resources/sap-ui-core.js",
-      value: "http://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+      name: "https://sapui5.hana.ondemand.com/resources/sap-ui-core.js",
+      value: "https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
     }, {
       name: "resources/sap-ui-core.js",
       value: "resources/sap-ui-core.js",
@@ -218,7 +218,7 @@ Sapui5Generator.prototype.sapui5 = function sapui5() {
     this.mkdir('coffee/view');
     this.mkdir('coffee/util');
 
-    this.template('coffee/Compoment.coffee', 'coffee/Compoment.coffee');
+    this.template('coffee/Component.coffee', 'coffee/Component.coffee');
     this.template('coffee/Router.coffee', 'coffee/Router.coffee');
     this.copy('coffee/view/App.view.coffee', 'coffee/view/App.view.coffee');
     this.copy('coffee/view/App.controller.coffee', 'coffee/view/App.controller.coffee');
@@ -226,7 +226,7 @@ Sapui5Generator.prototype.sapui5 = function sapui5() {
     this.copy('coffee/view/Home.controller.coffee', 'coffee/view/Home.controller.coffee');
     if(this.applicationType === "splitApp"){
       this.copy('coffee/view/Menu.view.coffee', 'coffee/view/Menu.view.coffee');
-      this.copy('coffee/view/Menu.controller.coffee', 'coffee/controller/Menu.view.coffee');
+      this.copy('coffee/view/Menu.controller.coffee', 'coffee/view/Menu.controller.coffee');
     }
     this.copy('coffee/view/Sub.view.coffee', 'coffee/view/Sub.view.coffee');
     this.copy('coffee/view/Sub.controller.coffee', 'coffee/view/Sub.controller.coffee');
@@ -251,7 +251,11 @@ Sapui5Generator.prototype.mainStylesheet = function mainStylesheet() {
 };
 
 Sapui5Generator.prototype.index = function index() {
-    this.template('common/app/index.html', 'app/index.html');
+    this.template('common/root/message', 'app/index.html');
+};
+
+Sapui5Generator.prototype.i18n = function i18b() {
+    this.template('common/app/messageBundle.properties', 'app/i18n/messageBundle.properties');
 };
 
 Sapui5Generator.prototype.app = function app() {
@@ -260,6 +264,7 @@ Sapui5Generator.prototype.app = function app() {
   this.mkdir('app/img');
   this.mkdir('app/view');
   this.mkdir('app/util');
+  this.mkdir('app/i18n');
 
   if (this.coffee) {
     this.mkdir('coffee');

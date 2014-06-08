@@ -4,7 +4,7 @@ sap.ui.jsview "view.App",
 
   createContent: (oController) ->
     @setDisplayBlock true
-    new sap.m.App "appConteiner",
+    new sap.m.SplitApp "appConteiner",
       afterDetailNavigate: ->
         @hideMaster()
       homeIcon:
